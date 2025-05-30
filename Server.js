@@ -29,10 +29,8 @@ const transporter = nodemailer.createTransport({
 //------------------------------------------------------------------------------------------------------------------
 
 // ---------- CONEXÃO COM O BANCO E CRIAÇÃO DO ADMIN ---------------------------------------------------------------------------------------------
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(async () => {
+mongoose.connect(process.env.MONGO_URI)
+.then(async () => {
   console.log('MongoDB conectado!');
 
   const adminEmail = 'admin@seusite.com';
